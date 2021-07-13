@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>登录注册</title>
+    <link rel="stylesheet" href="/layui.css">
+</head>
+<body>
+
+<!-- 你的 HTML 代码 -->
+
+<script src="/layui.js"></script>
+<script>
+    layui.use(['layer', 'form'], function(){
+        var layer = layui.layer
+            ,form = layui.form;
+        layer.msg('注册成功');
+    });
+</script>
+<h1><div style="text-align: center;">注册成功！</div></h1>
+<a href="http://localhost:8080/">
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <label class="layui-form-label">返回登录界面</label>
+            <button type=button value="返回" class="layui-btn">
+                <i class="layui-icon"></i> 返回
+            </button>
+        </div>
+    </div>
+</a>
+
+
+<a href="http://localhost:8080/register">
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <label class="layui-form-label">重新注册？</label>
+            <button type=button value="register" class="layui-btn">
+                <i class="layui-icon"></i> 注册
+            </button>
+        </div>
+    </div>
+</a>
+
+
+<script>
+    //Demo
+    layui.use('form', function(){
+        var form = layui.form;
+
+        //监听提交
+        form.on('submit(formDemo)', function(data){
+            layer.msg(JSON.stringify(data.field));
+            return false;
+        });
+    });
+</script>
+</body>
+</html>

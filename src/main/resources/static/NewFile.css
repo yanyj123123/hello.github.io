@@ -1,0 +1,15 @@
+/*Menu*/
+.menuFrame{
+    position:relative;
+    left:200px;
+    right:0;top:0;bottom:0;
+    z-index:901;
+    width:auto;
+    box-sizing:border-box;
+    background: #eb7350;
+}
+
+.una{
+    width: 50px;
+    text-align: center;
+}

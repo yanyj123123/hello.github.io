@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>登录注册</title>
+  <link rel="stylesheet" href="/layui.css">
+
+  <style>
+    .child{
+      position: fixed;
+      width: 200px;
+      height: 150px;
+      top:50%;
+      left: 50%;
+      transform: translate(-70px,-150px);
+    }
+  </style>
+
+  <style>
+    .child1{
+      position: fixed;
+      width: 200px;
+      height: 150px;
+      top:50%;
+      left: 50%;
+      transform: translate(-180px,-150px);
+    }
+  </style>
+
+  <style>
+    .child2{
+      position: fixed;
+      width: 200px;
+      height: 150px;
+      top:50%;
+      left: 50%;
+      transform: translate(-180px,-100px);
+    }
+  </style>
+
+
+  <style>
+    .child3{
+      position: fixed;
+      width: 200px;
+      height: 150px;
+      top:50%;
+      left: 50%;
+      transform: translate(-70px,-100px);
+    }
+  </style>
+
+
+  <style>
+    .child4{
+      position: fixed;
+      width: 200px;
+      height: 150px;
+      top:50%;
+      left: 50%;
+      transform: translate(-130px,-40px);
+    }
+  </style>
+
+  <style>
+    .child5{
+      position: fixed;
+      width: 200px;
+      height: 150px;
+      top:50%;
+      left: 50%;
+      transform: translate(-40px,-40px);
+    }
+  </style>
+
+  <style>
+    .child6{
+      position: fixed;
+      width: 200px;
+      height: 150px;
+      top:50%;
+      left: 50%;
+      transform: translate(50px,-40px);
+    }
+  </style>
+
+  <style>
+    .child7{
+      position: fixed;
+      width: 300px;
+      height: 150px;
+      top:50%;
+      left: 50%;
+      transform: translate(-140px,-220px);
+    }
+  </style>
+
+<style>
+  bg {
+    position:fixed;
+    top: 0;
+    left: 0;
+    width:100%;
+    height:100%;
+    min-width: 1000px;
+    z-index:-10;
+    zoom: 1;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    background: #fff url("../static/image/p1.png") no-repeat center 0;
+  }</style>
+
+</head>
+<body>
+
+<!-- 你的 HTML 代码 -->
+
+
+<script src="/layui.js"></script>
+<script>
+  layui.use(['layer', 'form'], function(){
+    var layer = layui.layer
+            ,form = layui.form;
+    layer.msg('欢迎进入共享租赁品台');
+  });
+</script>
+<div class="child7">
+  <div class="layui-font-red">
+<h1><div style="text-align: center;">共享租赁品台登录系统</div></h1>
+  </div>
+</div>
+
+<form class="layui-form" action="/loginIn" th:action="@{/loginIn}"  method="post">
+  <img src="/image/p1.png" class="bg">
+  <div class="layui-form-item">
+
+    <div style="text-align: center;">
+      <div class="child1">
+        <div class="layui-font-blue">
+          <div class="layui-font-20">
+      <label class="layui-form-label" >账号</label>
+          </div>
+        </div>
+      </div>
+      <div class="layui-input-inline">
+        <div class="child">
+        <input type="text" id="name" name = "name" required  lay-verify="required" placeholder="请输入账号" autocomplete="off" class="layui-input">
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="layui-form-item">
+    <div class="child2">
+      <div class="layui-font-blue">
+        <div class="layui-font-20">
+    <label class="layui-form-label">密码</label>
+        </div>
+      </div>
+    </div>
+    <div class="layui-input-inline">
+      <div class="child3">
+        <div class="layui-font-blue">
+      <input type="password" id = "password" name = "password" required lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
+
+        </div>
+      </div>
+          </div>
+  </div>
+  <div class="layui-form-item">
+    <div class="layui-input-block">
+      <div class="child4">
+        <div class="layui-font-blue">
+      <button type="submit" id = "login" value = "login" class="layui-btn">
+        <i class="layui-icon"></i> 登录
+      </button>
+        </div>
+      </div>
+
+      <div class="child5">
+        <div class="layui-font-blue">
+      <a href="http://localhost:8080/register"><button type=button value="register" class="layui-btn ">注册</button></a>
+        </div>
+      </div>
+
+      <div class="child6">
+        <div class="layui-font-blue">
+          <a href="http://localhost:8080/Cpassword"><button type=button value="Cpassword" class="layui-btn ">忘记密码？</button></a>
+        </div>
+      </div>
+
+        </div>
+
+
+
+
+  </div>
+
+</form>
+
+<script>
+  //Demo
+  layui.use('form', function(){
+    var form = layui.form;
+
+    //监听提交
+    form.on('submit(formDemo)', function(data){
+      layer.msg(JSON.stringify(data.field));
+      return false;
+    });
+  });
+</script>
+
+</body>
+
+</html>
